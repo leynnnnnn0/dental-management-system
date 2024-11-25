@@ -18,9 +18,12 @@
 </head>
 
 <body class="antialiased font-sans">
+    <nav class="bg-primary px-4 text-white font-bold h-16 flex items-center">
+        My Dental System
+    </nav>
     <div class="d-flex">
         <livewire:sidebar />
-        <main>
+        <main class="p-3 bg-gray-100 w-full">
             {{ $slot }}
         </main>
     </div>
