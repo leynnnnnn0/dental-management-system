@@ -19,15 +19,11 @@
 
 <body class="antialiased font-sans">
     <div class="d-flex">
-        <!-- Sidebar -->
         <livewire:sidebar />
-
-        <!-- Main Content -->
-        <main class="flex-grow-1 p-4">
+        <main>
             {{ $slot }}
         </main>
     </div>
-
     @livewireScripts
 </body>
 

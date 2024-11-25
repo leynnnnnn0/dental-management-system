@@ -1,4 +1,4 @@
-<div class="sidebar bg-dark text-white" style="width: 250px; min-height: 100vh;">
+<div class="w-64 bg-primary h-screen">
     <!-- Sidebar Header -->
     <div class="p-3 border-bottom">
         <h5 class="text-white mb-0">My Dental System</h5>
