@@ -1,4 +1,4 @@
-<div class="w-64 bg-primary h-screen">
+<div class="w-64 bg-primary">
     <!-- Sidebar Menu -->
     <ul class="nav flex-column p-3">
         <li class="nav-item">

@@ -17,7 +17,7 @@
     @vite(['resources/css/app.css', 'resources/js/app.js'])
 </head>
 
-<body class="antialiased font-sans">
+<body class="antialiased font-sans bg-red-500 flex flex-col min-h-screen">
     @if(session()->has('success'))
     <div class="alert alert-success alert-dismissible fade show absolute self-end m-3 right-0" role="alert">
         <strong>{{ session('success') }}</strong>
@@ -27,12 +27,14 @@
     <nav class="bg-primary px-4 text-white font-bold h-16 flex items-center">
         My Dental System
     </nav>
-    <div class="d-flex">
+
+    <div class="d-flex flex-1">
         <livewire:sidebar />
         <main class="p-3 bg-gray-100 w-full">
             {{ $slot }}
         </main>
     </div>
+
     @livewireScripts
 </body>
 

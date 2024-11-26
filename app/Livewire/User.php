@@ -18,4 +18,12 @@ class User extends Component
             'users' => $users
         ]);
     }
+
+    public function delete($id)
+    {
+        $user = ModelsUser::findOrFail($id);
+        $user->delete();
+        session()->flash('success', 'User Deleted Successfully');
+        return $this->redirect(route('users.index'), true);
+    }
 }

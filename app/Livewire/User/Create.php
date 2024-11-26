@@ -16,12 +16,13 @@ class Create extends Component
     public function submit()
     {
         $this->form->store();
-
-        $this->dispatch(
-            'show-toast',
-            message: 'User created successfully!',
-            type: 'success'
-        );
         return redirect()->route('users.index')->with('success', 'User Created Successfully!');
+    }
+
+    public function isFormComplete()
+    {
+        return !empty($this->form->name) &&
+            !empty($this->form->email) &&
+            !empty($this->form->password);
     }
 }
