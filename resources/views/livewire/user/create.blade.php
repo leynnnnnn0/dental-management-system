@@ -1,4 +1,7 @@
-<x-layouts.create title="User" :cancelLocation="route('users.index')" wire:click="submit">
+<x-layouts.create title="User"
+    :cancelLocation="route('users.index')"
+    wire:click="submit"
+    confirmationMessage="Are you sure you want to create this user?">
     <x-form.input label="Name"
         name="form.name"
         model="form.name" />

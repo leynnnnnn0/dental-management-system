@@ -18,6 +18,12 @@
 </head>
 
 <body class="antialiased font-sans">
+    @if(session()->has('success'))
+    <div class="alert alert-success alert-dismissible fade show absolute self-end m-3 right-0" role="alert">
+        <strong>{{ session('success') }}</strong>
+        <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+    </div>
+    @endif
     <nav class="bg-primary px-4 text-white font-bold h-16 flex items-center">
         My Dental System
     </nav>

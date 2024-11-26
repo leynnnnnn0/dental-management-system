@@ -23,4 +23,8 @@
         </tr>
         @endforeach
     </x-table.table>
+
+    <div>
+        {{ $users->links()}}
+    </div>
 </div>
