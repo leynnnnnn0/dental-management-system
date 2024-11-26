@@ -14,7 +14,13 @@
             <x-table.td>{{$user->email}}</x-table.td>
             <x-table.td>
                 <div class="flex items-center gap-3">
-                    <i class="bi bi-eye text-lg"></i>
+                    <x-modal.infolist-modal message="Are you sure you want to update the user details?">
+                        <section class="grid grid-cols-2 gap-3">
+                            <x-infolist label="Id" :value="$user->id" />
+                            <x-infolist label="Name" :value="$user->name" />
+                            <x-infolist label="Email" :value="$user->email" />
+                        </section>
+                    </x-modal.infolist-modal>
                     <a href="/users/edit/{{ $user->id }}">
                         <i class="bi bi-pen text-blue-500 text-lg"></i>
                     </a>
@@ -27,4 +33,5 @@
     <div>
         {{ $users->links()}}
     </div>
+
 </div>
