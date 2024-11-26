@@ -1,0 +1,1 @@
+<x-tsselect.styled {{ $attributes }} select="label:label|value:value" searchable />

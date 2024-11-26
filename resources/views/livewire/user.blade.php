@@ -1,7 +1,5 @@
 <div class="space-y-5">
-    <section>
-        <h1 class="text-black font-bold text-3xl">Users</h1>
-    </section>
+    <x-index-header heading="Users" buttonName="Create New User" location="/users/create" />
     <x-table.table>
         <x-table.tr>
             <x-table.th>Id</x-table.th>
