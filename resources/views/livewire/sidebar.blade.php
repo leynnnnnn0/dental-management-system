@@ -7,7 +7,7 @@
             </a>
         </li>
         <li class="nav-item">
-            <a href="/users" class="nav-link text-white font-bold {{ request()->is('users') ? 'active' : '' }}">
+            <a href="/users" class="nav-link text-white font-bold {{ request()->is('users*') ? 'active' : '' }}">
                 <i class="bi bi-people me-2"></i> Users
             </a>
         </li>

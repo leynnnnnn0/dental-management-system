@@ -15,7 +15,9 @@
             <x-table.td>
                 <div class="flex items-center gap-3">
                     <i class="bi bi-eye text-lg"></i>
-                    <i class="bi bi-pen text-blue-500 text-lg"></i>
+                    <a href="/users/edit/{{ $user->id }}">
+                        <i class="bi bi-pen text-blue-500 text-lg"></i>
+                    </a>
                     <x-modal.delete-modal message="Are you sure you want to delete this user?" wire:click="delete({{$user->id}})" />
                 </div>
             </x-table.td>
