@@ -18,11 +18,4 @@ class Create extends Component
         $this->form->store();
         return redirect()->route('users.index')->with('success', 'User Created Successfully!');
     }
-
-    public function isFormComplete()
-    {
-        return !empty($this->form->name) &&
-            !empty($this->form->email) &&
-            !empty($this->form->password);
-    }
 }
