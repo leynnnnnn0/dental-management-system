@@ -9,7 +9,7 @@
         <section class="py-2 grid grid-cols-2 gap-3">
             {{ $slot }}
         </section>
-        <section class="flex justify-end gap-3">
+        <section class="flex justify-end gap-3 mt-3">
             <a href="{{ $cancelLocation }}" class="px-4 py-1 border border-gray-500 rounded-lg text-black hover:bg-opacity-75 transition-colors duration-300 dark:text-white dark:border-white" wire:navigate.hover>Cancel</a>
             <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#confirmation">
                 Submit

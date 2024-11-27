@@ -1,6 +1,7 @@
 <?php
 
 use App\Livewire\Dashboard;
+use App\Livewire\Patient;
 use App\Livewire\User;
 use App\Livewire\User\Create as CreateUser;
 use App\Livewire\User\Edit as EditUser;
@@ -10,10 +11,14 @@ Route::view('/', 'welcome');
 
 Route::get('dashboard', Dashboard::class);
 
-Route::name('users.')->group(function () {
-    Route::get('users', User::class)->name('index');
-    Route::get('users/create', CreateUser::class)->name('create');
-    Route::get('users/edit/{id}', EditUser::class)->name('edit');
+Route::name('users.')->prefix('users')->group(function () {
+    Route::get('/', User::class)->name('index');
+    Route::get('/create', CreateUser::class)->name('create');
+    Route::get('/edit/{id}', EditUser::class)->name('edit');
+});
+
+Route::name('patients')->prefix('patients')->group(function () {
+    Route::get('/', Patient::class)->name('index');
 });
 
 Route::view('profile', 'profile')
