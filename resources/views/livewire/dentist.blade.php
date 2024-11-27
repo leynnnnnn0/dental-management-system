@@ -7,7 +7,7 @@
             <x-table.th>Email</x-table.th>
             <x-table.th>Actions</x-table.th>
         </x-table.tr>
-        @foreach ($dentists as $patient)
+        @foreach ($dentists as $dentist)
         <tr class="border-b border-gray-300">
             <x-table.td>{{$dentist->id}}</x-table.td>
             <x-table.td>{{$dentist->first_name}}</x-table.td>
