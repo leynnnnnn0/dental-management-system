@@ -17,8 +17,13 @@
                     <x-modal.infolist-modal message="Are you sure you want to update the user details?">
                         <section class="grid grid-cols-2 gap-3">
                             <x-infolist label="Id" :value="$dentist->id" />
-                            <x-infolist label="Name" :value="$dentist->name" />
+                            <x-infolist label="First Name" :value="$dentist->first_name" />
+                            <x-infolist label="Middle Name" :value="$dentist->middle_name" />
+                            <x-infolist label="Last Name" :value="$dentist->last_name" />
+                            <x-infolist label="Contact Number" :value="$dentist->contact_number" />
                             <x-infolist label="Email" :value="$dentist->email" />
+                            <x-infolist label="Specialization" :value="$dentist->license_number" />
+                            <x-infolist label="" :value="$dentist->license_number" />
                         </section>
                     </x-modal.infolist-modal>
                     <a href="/patients/edit/{{ $dentist->id }}">
