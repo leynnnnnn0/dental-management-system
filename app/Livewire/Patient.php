@@ -3,10 +3,27 @@
 namespace App\Livewire;
 
 use App\Models\Patient as ModelsPatient;
+use App\Traits\HasDeleteAction;
 use Livewire\Component;
 
 class Patient extends Component
 {
+    use HasDeleteAction;
+
+    public function getRouteName(): string
+    {
+        return 'dentists.index';
+    }
+
+    public function getModel()
+    {
+        return ModelsPatient::class;
+    }
+
+    public function getSuccessMessage(): string
+    {
+        return 'Patient Deleted Successfully';
+    }
     public function render()
     {
         $patients = ModelsPatient::paginate(10);

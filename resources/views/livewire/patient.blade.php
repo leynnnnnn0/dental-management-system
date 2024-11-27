@@ -17,7 +17,10 @@
                     <x-modal.infolist-modal message="Are you sure you want to update the user details?">
                         <section class="grid grid-cols-2 gap-3">
                             <x-infolist label="Id" :value="$patient->id" />
-                            <x-infolist label="Name" :value="$patient->name" />
+                            <x-infolist label="First Name" :value="$patient->first_name" />
+                            <x-infolist label="Middle Name" :value="$patient->middle_name" />
+                            <x-infolist label="Last Name" :value="$patient->last_name" />
+                            <x-infolist label="Contact Number" :value="$patient->contact_number" />
                             <x-infolist label="Email" :value="$patient->email" />
                         </section>
                     </x-modal.infolist-modal>
