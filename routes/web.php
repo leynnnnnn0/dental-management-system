@@ -3,6 +3,7 @@
 use App\Livewire\Dashboard;
 use App\Livewire\Patient;
 use App\Livewire\User;
+use App\Livewire\Dentist;
 use App\Livewire\User\Create as CreateUser;
 use App\Livewire\User\Edit as EditUser;
 use Illuminate\Support\Facades\Route;
@@ -19,6 +20,10 @@ Route::name('users.')->prefix('users')->group(function () {
 
 Route::name('patients')->prefix('patients')->group(function () {
     Route::get('/', Patient::class)->name('index');
+});
+
+Route::name('dentists')->prefix('dentists')->group(function () {
+    Route::get('/', Dentist::class)->name('index');
 });
 
 Route::view('profile', 'profile')

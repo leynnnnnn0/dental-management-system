@@ -19,7 +19,9 @@ return new class extends Migration
             $table->foreignId('schedule_id')->constrained('schedules')->cascadeOnDelete();
             $table->string('concern');
             $table->text('remarks')->nullable();
-            $table->enum('status', AppointmentStatus::values())->default('status');
+            $table->enum('status', [
+                'pending'
+            ])->default('pending');
             $table->timestamps();
         });
     }
