@@ -49,4 +49,12 @@ class DentistForm extends Form
         $this->validate();
         return Dentist::create($this->all());
     }
+
+    public function update()
+    {
+
+        $dentist = Dentist::findOrFail($this->dentist_id);
+        $dentist->update($this->except('password'));
+        return $dentist->fresh();
+    }
 }

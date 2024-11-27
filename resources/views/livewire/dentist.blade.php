@@ -26,7 +26,7 @@
                             <x-infolist label="" :value="$dentist->license_number" />
                         </section>
                     </x-modal.infolist-modal>
-                    <a href="/patients/edit/{{ $dentist->id }}">
+                    <a href="/dentists/edit/{{ $dentist->id }}">
                         <i class="bi bi-pen text-blue-500 text-lg"></i>
                     </a>
                     <x-modal.delete-modal message="Are you sure you want to delete this user?" wire:click="delete({{$dentist->id}})" />

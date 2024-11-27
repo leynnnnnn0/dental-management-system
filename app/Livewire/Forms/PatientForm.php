@@ -37,6 +37,14 @@ class PatientForm extends Form
         $this->contact_number = $patient->contact_number;
     }
 
+    public function update()
+    {
+
+        $patient = Patient::findOrFail($this->patient_id);
+        $patient->update($this->all());
+        return $patient->fresh();
+    }
+
     public function store()
     {
         $this->validate();
