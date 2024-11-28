@@ -8,10 +8,13 @@ use App\Livewire\Dentist;
 use App\Livewire\User\Create as CreateUser;
 use App\Livewire\Patient\Create as CreatePatient;
 use App\Livewire\Dentist\Create as CreateDentist;
+use App\Livewire\Schedule\Create as CreateSchedule;
 
 use App\Livewire\User\Edit as EditUser;
 use App\Livewire\Patient\Edit as EditPatient;
 use App\Livewire\Dentist\Edit as EditDentist;
+use App\Livewire\Schedule;
+use App\Livewire\Schedule\Edit as EditSchedule;
 use Illuminate\Support\Facades\Route;
 
 Route::view('/', 'welcome');
@@ -34,6 +37,12 @@ Route::name('dentists.')->prefix('dentists')->group(function () {
     Route::get('/', Dentist::class)->name('index');
     Route::get('/create', CreateDentist::class)->name('create');
     Route::get('/edit/{id}', EditDentist::class)->name('edit');
+});
+
+Route::name('schedules.')->prefix('schedules')->group(function () {
+    Route::get('/', Schedule::class)->name('index');
+    Route::get('/create', CreateSchedule::class)->name('create');
+    Route::get('/edit/{id}', EditSchedule::class)->name('edit');
 });
 
 Route::view('profile', 'profile')

@@ -22,6 +22,11 @@
             </a>
         </li>
         <li class="nav-item">
+            <a href="/schedules" class="nav-link text-white font-bold {{ request()->is('schedules*') ? 'active' : '' }}">
+                <i class="bi bi-people me-2"></i> Schedules
+            </a>
+        </li>
+        <li class="nav-item">
             <a href="/settings" class="nav-link text-white font-bold {{ request()->is('settings') ? 'active' : '' }}">
                 <i class="bi bi-gear me-2"></i> Settings
             </a>
