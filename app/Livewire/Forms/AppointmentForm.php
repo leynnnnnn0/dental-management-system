@@ -24,7 +24,6 @@ class AppointmentForm extends Form
             'schedule_id' => ['required'],
             'concern' => ['required'],
             'remarks' => ['sometimes'],
-            'status' => ['required']
         ];
     }
 

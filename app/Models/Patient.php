@@ -17,4 +17,9 @@ class Patient extends Model
         'contact_number',
         'email',
     ];
+
+    public function getFullNameAttribute()
+    {
+        return "$this->first_name $this->last_name";
+    }
 }

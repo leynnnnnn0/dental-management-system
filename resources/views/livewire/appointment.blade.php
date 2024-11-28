@@ -11,8 +11,9 @@
         @foreach ($appointments as $appointment)
         <tr class="border-b border-gray-300">
             <x-table.td>{{$appointment->id}}</x-table.td>
-            <x-table.td>{{$appointment->name}}</x-table.td>
-            <x-table.td>{{$appointment->email}}</x-table.td>
+            <x-table.td>{{$appointment->concern}}</x-table.td>
+            <x-table.td>{{$appointment->remarks}}</x-table.td>
+            <x-table.td>{{$appointment->status}}</x-table.td>
             <x-table.td>
                 <div class="flex items-center gap-3">
                     <x-modal.infolist-modal message="Are you sure you want to update the user details?">
