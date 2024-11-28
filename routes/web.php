@@ -51,8 +51,8 @@ Route::name('schedules.')->prefix('schedules')->group(function () {
 
 Route::name('appointments.')->prefix('appointments')->group(function () {
     Route::get('/', Appointment::class)->name('index');
-    Route::get('/create', CreateSchedule::class)->name('create');
-    Route::get('/edit/{id}', EditSchedule::class)->name('edit');
+    Route::get('/create', CreateAppointment::class)->name('create');
+    Route::get('/edit/{id}', EditAppointment::class)->name('edit');
 });
 
 Route::view('profile', 'profile')
