@@ -1,4 +1,4 @@
-<x-layouts.create title="Dentists"
+<x-layouts.create title="Dentist"
     :cancelLocation="route('dentists.index')"
     wire:click="submit"
     confirmationMessage="Are you sure you want to create this dentist?">
