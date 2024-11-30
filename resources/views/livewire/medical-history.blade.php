@@ -23,10 +23,8 @@
                             <x-infolist label="Id" :value="$medicalHistory->id" />
                             <x-infolist label="Dentist" :value="$medicalHistory->dentist->full_name" />
                             <x-infolist label="Patient" :value="$medicalHistory->patient->full_name" />
-                            <x-infolist label="Schedule" :value="$medicalHistory->schedule->timeslot" />
                             <x-infolist label="Concern" :value="$medicalHistory->concern" />
                             <x-infolist label="Remarks" :value="$medicalHistory->remarks" />
-                            <x-infolist label="Status" :value="$medicalHistory->status" />
                         </section>
                     </x-modal.infolist-modal>
                     <a href="/medical-histories/edit/{{ $medicalHistory->id }}">

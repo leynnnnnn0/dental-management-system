@@ -48,12 +48,13 @@ class MedicalHistoryForm extends Form
         return $medicalHistory->fresh();
     }
 
-    public function setAppointmentForm(MedicalHistory $medicalHistory)
+    public function setMedicalHistoryForm(MedicalHistory $medicalHistory)
     {
         $this->medical_history_id = $medicalHistory->id;
         $this->patient_id = $medicalHistory->patient_id;
         $this->dentist_id = $medicalHistory->dentist_id;
         $this->concern = $medicalHistory->concern;
+        $this->treatment = $medicalHistory->treatment;
         $this->remarks = $medicalHistory->remarks;
     }
 }
