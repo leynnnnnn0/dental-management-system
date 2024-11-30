@@ -13,6 +13,11 @@ return new class extends Migration
     {
         Schema::create('medical_histories', function (Blueprint $table) {
             $table->id();
+            $table->foreignId('patient_id')->constrained('patients')->cascadeOnDelete();
+            $table->foreignId('dentist_id')->constrained('dentists')->cascadeOnDelete();
+            $table->text('concern');
+            $table->text('treatment');
+            $table->text('remarks')->nullable();
             $table->timestamps();
         });
     }

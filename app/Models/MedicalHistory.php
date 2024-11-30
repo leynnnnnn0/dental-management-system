@@ -9,4 +9,12 @@ class MedicalHistory extends Model
 {
     /** @use HasFactory<\Database\Factories\MedicalHistoryFactory> */
     use HasFactory;
+
+    protected $fillable = [
+        'patient_id',
+        'dentist_id',
+        'concern',
+        'treatment',
+        'remarks'
+    ];
 }
