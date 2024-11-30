@@ -5,6 +5,7 @@
             <x-table.th>Id</x-table.th>
             <x-table.th>Dentist</x-table.th>
             <x-table.th>Patient</x-table.th>
+            <x-table.th>Schedule</x-table.th>
             <x-table.th>Concern</x-table.th>
             <x-table.th>Status</x-table.th>
             <x-table.th>Actions</x-table.th>
@@ -14,6 +15,7 @@
             <x-table.td>{{$appointment->id}}</x-table.td>
             <x-table.td>{{$appointment->dentist->full_name}}</x-table.td>
             <x-table.td>{{$appointment->patient->full_name}}</x-table.td>
+            <x-table.td>{{$appointment->schedule->timeslot}}</x-table.td>
             <x-table.td>{{$appointment->concern}}</x-table.td>
             <x-table.td>{{$appointment->status}}</x-table.td>
             <x-table.td>
@@ -21,8 +23,12 @@
                     <x-modal.infolist-modal message="Are you sure you want to update the user details?">
                         <section class="grid grid-cols-2 gap-3">
                             <x-infolist label="Id" :value="$appointment->id" />
-                            <x-infolist label="Name" :value="$appointment->name" />
-                            <x-infolist label="Email" :value="$appointment->email" />
+                            <x-infolist label="Dentist" :value="$appointment->dentist->full_name" />
+                            <x-infolist label="Patient" :value="$appointment->patient->full_name" />
+                            <x-infolist label="Schedule" :value="$appointment->schedule->timeslot" />
+                            <x-infolist label="Concern" :value="$appointment->concern" />
+                            <x-infolist label="Remarks" :value="$appointment->remarks" />
+                            <x-infolist label="Status" :value="$appointment->status" />
                         </section>
                     </x-modal.infolist-modal>
                     <a href="/appointments/edit/{{ $appointment->id }}">
