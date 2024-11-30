@@ -11,11 +11,17 @@ class Schedule extends Model
     use HasFactory;
 
     protected $fillable = [
-        'timeslot'
+        'from',
+        'to'
     ];
 
     public function appointment()
     {
         return $this->hasMany(Appointment::class);
+    }
+
+    public function getTimeslotAttribute()
+    {
+        return "$this->from - $this->to";
     }
 }

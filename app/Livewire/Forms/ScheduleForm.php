@@ -9,12 +9,14 @@ use Livewire\Form;
 class ScheduleForm extends Form
 {
     public $schedule_id;
-    public $timeslot;
+    public $from;
+    public $to;
 
     public function rules()
     {
         return [
-            'timeslot' => ['required']
+            'from' => ['required'],
+            'to' => ['required']
         ];
     }
 
@@ -27,7 +29,8 @@ class ScheduleForm extends Form
     public function setScheduleForm(Schedule $schedule)
     {
         $this->schedule_id = $schedule->id;
-        $this->timeslot = $schedule->timeslot;
+        $this->from = $schedule->from;
+        $this->to = $schedule->to;
     }
 
     public function update()

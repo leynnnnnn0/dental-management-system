@@ -41,8 +41,5 @@ class DatabaseSeeder extends Seeder
             'password' => 'password' 
         ]);
 
-        Schedule::factory()->create([
-            'timeslot' => '8:00 - 9:00'
-        ]);
     }
 }
