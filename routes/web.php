@@ -11,11 +11,15 @@ use App\Livewire\Patient\Create as CreatePatient;
 use App\Livewire\Dentist\Create as CreateDentist;
 use App\Livewire\Schedule\Create as CreateSchedule;
 use App\Livewire\Appointment\Create as CreateAppointment;
+use App\Livewire\MedicalHistory\Create as CreateMedicalHistory;
 
 use App\Livewire\User\Edit as EditUser;
 use App\Livewire\Patient\Edit as EditPatient;
 use App\Livewire\Dentist\Edit as EditDentist;
 use App\Livewire\Appointment\Edit as EditAppointment;
+use App\Livewire\MedicalHistory\Edit as EditMedicalHistory;
+
+use App\Livewire\MedicalHistory;
 use App\Livewire\Schedule;
 use App\Livewire\Schedule\Edit as EditSchedule;
 use Illuminate\Support\Facades\Route;
@@ -53,6 +57,12 @@ Route::name('appointments.')->prefix('appointments')->group(function () {
     Route::get('/', Appointment::class)->name('index');
     Route::get('/create', CreateAppointment::class)->name('create');
     Route::get('/edit/{id}', EditAppointment::class)->name('edit');
+});
+
+Route::name('medical-histories.')->prefix('medical-histories')->group(function () {
+    Route::get('/', MedicalHistory::class)->name('index');
+    Route::get('/create', CreateMedicalHistory::class)->name('create');
+    Route::get('/edit/{id}', EditMedicalHistory::class)->name('edit');
 });
 
 Route::view('profile', 'profile')
