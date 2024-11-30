@@ -43,9 +43,9 @@ class MedicalHistoryForm extends Form
     public function update()
     {
         $this->validate();
-        $appointment = MedicalHistory::find($this->medical_history_id);
-        $appointment->update($this->all());
-        return $appointment->fresh();
+        $medicalHistory = MedicalHistory::find($this->medical_history_id);
+        $medicalHistory->update($this->all());
+        return $medicalHistory->fresh();
     }
 
     public function setAppointmentForm(MedicalHistory $medicalHistory)

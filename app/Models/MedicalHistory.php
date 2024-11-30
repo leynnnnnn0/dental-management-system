@@ -17,4 +17,15 @@ class MedicalHistory extends Model
         'treatment',
         'remarks'
     ];
+
+
+    public function patient()
+    {
+        return $this->belongsTo(Patient::class);
+    }
+
+    public function dentist()
+    {
+        return $this->belongsTo(Dentist::class);
+    }
 }
