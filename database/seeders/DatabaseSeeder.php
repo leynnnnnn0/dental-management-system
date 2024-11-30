@@ -38,7 +38,7 @@ class DatabaseSeeder extends Seeder
             'email' => 'nathaniel@gmail.com',
             'specialization' => 'teeth',
             'license_number' => '4324234234234',
-            'password' => 'password'
+            'password' => 'password' 
         ]);
 
         Schedule::factory()->create([

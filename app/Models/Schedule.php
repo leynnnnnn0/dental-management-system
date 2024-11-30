@@ -13,4 +13,9 @@ class Schedule extends Model
     protected $fillable = [
         'timeslot'
     ];
+
+    public function appointment()
+    {
+        return $this->hasMany(Appointment::class);
+    }
 }
