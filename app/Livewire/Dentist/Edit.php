@@ -24,7 +24,7 @@ class Edit extends Component
     }
     public function mount($id)
     {
-        $this->form->setUserForm(Dentist::findOrFail($id));
+        $this->form->setDentistForm(Dentist::findOrFail($id));
     }
 
     public function render()

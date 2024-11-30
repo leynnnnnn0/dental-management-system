@@ -32,7 +32,7 @@ class DentistForm extends Form
         ];
     }
 
-    public function setUserForm(Dentist $dentist)
+    public function setDentistForm(Dentist $dentist)
     {
         $this->dentist_id = $dentist->id;
         $this->first_name = $dentist->first_name;

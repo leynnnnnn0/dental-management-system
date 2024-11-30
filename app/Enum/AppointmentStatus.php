@@ -6,6 +6,9 @@ enum AppointmentStatus
 {
     public static function values()
     {
-        return [];
+        return [
+            'approved',
+            'pending'
+        ];
     }
 }

@@ -48,4 +48,15 @@ class AppointmentForm extends Form
         $appointment->update($this->all());
         return $appointment->fresh();
     }
+
+    public function setAppointmentForm(Appointment $appointment)
+    {
+        $this->appointment_id = $appointment->id;
+        $this->patient_id = $appointment->patient_id;
+        $this->dentist_id = $appointment->dentist_id;
+        $this->schedule_id = $appointment->schedule_id;
+        $this->concern = $appointment->concern;
+        $this->remarks = $appointment->remarks;
+        $this->status = $appointment->status;
+    }
 }

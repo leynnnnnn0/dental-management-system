@@ -20,7 +20,9 @@ return new class extends Migration
             $table->string('concern');
             $table->text('remarks')->nullable();
             $table->enum('status', [
-                'pending'
+                'pending',
+                'approved',
+                'completed'
             ])->default('pending');
             $table->timestamps();
         });

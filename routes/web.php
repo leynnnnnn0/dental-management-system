@@ -44,8 +44,8 @@ Route::name('dentists.')->prefix('dentists')->group(function () {
 
 Route::name('schedules.')->prefix('schedules')->group(function () {
     Route::get('/', Schedule::class)->name('index');
-    Route::get('/create', CreateAppointment::class)->name('create');
-    Route::get('/edit/{id}', EditAppointment::class)->name('edit');
+    Route::get('/create', CreateSchedule::class)->name('create');
+    Route::get('/edit/{id}', EditSchedule::class)->name('edit');
 });
 
 
