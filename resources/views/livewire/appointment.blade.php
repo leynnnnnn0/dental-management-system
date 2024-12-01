@@ -36,8 +36,54 @@
                         <i class="bi bi-pen text-blue-500 text-lg"></i>
                     </a>
                     <x-modal.delete-modal message="Are you sure you want to delete this appointment?" wire:click="delete({{$appointment->id}})" />
-                    <span class="cursor-pointer hover:underline text-xs text-green-500">Approve</span>
-                    <span class="cursor-pointer hover:underline text-xs text-red-500">Decline</span>
+
+                    @if($appointment->status === 'pending')
+                    <div>
+                        <button class="cursor-pointer hover:underline text-xs text-green-500" type="button" data-bs-toggle="modal" data-bs-target="#approve">
+                            Approve
+                        </button>
+                        <div class="modal fade" id="approve" tabindex="-1" aria-labelledby="approve-modal" aria-hidden="true">
+                            <div class="modal-dialog">
+                                <div class="modal-content">
+                                    <div class="modal-header">
+                                        <h5 class="modal-title" id="exampleModalLabel">Confirmation</h5>
+                                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                                    </div>
+                                    <div class="modal-body">
+                                        Are you sure you want to confirm this appointment?
+                                    </div>
+                                    <div class="modal-footer">
+                                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                                        <button type="button" class="btn btn-success" data-bs-dismiss="modal" wire:click="approve('{{$appointment->id}}')">Confirm</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div>
+                        <button class="cursor-pointer hover:underline text-xs text-red-500" type="button" data-bs-toggle="modal" data-bs-target="#decline">
+                            Decline
+                        </button>
+                        <div class="modal fade" id="decline" tabindex="-1" aria-labelledby="decline-modal" aria-hidden="true">
+                            <div class="modal-dialog">
+                                <div class="modal-content">
+                                    <div class="modal-header">
+                                        <h5 class="modal-title" id="exampleModalLabel">Confirmation</h5>
+                                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                                    </div>
+                                    <div class="modal-body">
+                                        Are you sure you want to decline this appointment?
+                                    </div>
+                                    <div class="modal-footer">
+                                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                                        <button type="button" class="btn btn-danger" data-bs-dismiss="modal" wire:click="decline('{{$appointment->id}}')">Confirm</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    @endif
                 </div>
             </x-table.td>
         </tr>

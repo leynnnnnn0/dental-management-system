@@ -11,6 +11,24 @@ class Appointment extends Component
 {
     use HasDeleteAction, WithPagination;
     public $keyword;
+
+    public function approve($id)
+    {
+        ModelsAppointment::findOrFail($id)->update([
+            'status' => 'approved'
+        ]);
+        session()->flash('success', 'Appointment Approved!');
+        return $this->redirect(route('appointments.index'), true);
+    }
+
+    public function decline($id)
+    {
+        ModelsAppointment::findOrFail($id)->update([
+            'status' => 'declined'
+        ]);
+        session()->flash('success', 'Appointment Declined!');
+        return $this->redirect(route('appointments.index'), true);
+    }
     public function getRouteName(): string
     {
         return 'appointments.index';
