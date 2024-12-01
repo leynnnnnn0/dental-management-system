@@ -10,6 +10,7 @@ use Livewire\WithPagination;
 class Appointment extends Component
 {
     use HasDeleteAction, WithPagination;
+    public $keyword;
     public function getRouteName(): string
     {
         return 'appointments.index';
@@ -26,7 +27,10 @@ class Appointment extends Component
     }
     public function render()
     {
-        $appointments = ModelsAppointment::paginate(10);
+        $query = ModelsAppointment::query();
+        if ($this->keyword)
+            $query->whereAny(['appointment_number'], 'like', "%{$this->keyword}%");
+        $appointments = $query->paginate(10);
         return view('livewire.appointment', [
             'appointments' => $appointments
         ]);

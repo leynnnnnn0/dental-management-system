@@ -1,5 +1,6 @@
 <div class="space-y-5">
     <x-index-header heading="Appointments" buttonName="Create New Appointment" location="/appointments/create" />
+    <x-search model="keyword"/>
     <x-table.table>
         <x-table.tr>
             <x-table.th>Id</x-table.th>
