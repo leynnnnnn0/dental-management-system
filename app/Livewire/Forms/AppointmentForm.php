@@ -3,6 +3,7 @@
 namespace App\Livewire\Forms;
 
 use App\Models\Appointment;
+use Illuminate\Support\Number;
 use Livewire\Attributes\Validate;
 use Livewire\Form;
 
@@ -15,6 +16,7 @@ class AppointmentForm extends Form
     public $concern;
     public $remarks;
     public $status;
+    public $appointment_number;
 
     public function rules()
     {
@@ -38,6 +40,7 @@ class AppointmentForm extends Form
     public function store()
     {
         $this->validate();
+        $this->appointment_number = 'AN-' . random_int(100000, 999999);
         return Appointment::create($this->all());
     }
 

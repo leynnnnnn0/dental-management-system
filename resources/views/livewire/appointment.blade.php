@@ -3,20 +3,20 @@
     <x-table.table>
         <x-table.tr>
             <x-table.th>Id</x-table.th>
+            <x-table.th>Appointment Number</x-table.th>
             <x-table.th>Dentist</x-table.th>
             <x-table.th>Patient</x-table.th>
             <x-table.th>Schedule</x-table.th>
-            <x-table.th>Concern</x-table.th>
             <x-table.th>Status</x-table.th>
             <x-table.th>Actions</x-table.th>
         </x-table.tr>
         @foreach ($appointments as $appointment)
         <tr class="border-b border-gray-300">
             <x-table.td>{{$appointment->id}}</x-table.td>
+            <x-table.td>{{$appointment->appointment_number}}</x-table.td>
             <x-table.td>{{$appointment->dentist->full_name}}</x-table.td>
             <x-table.td>{{$appointment->patient->full_name}}</x-table.td>
             <x-table.td>{{$appointment->schedule->timeslot}}</x-table.td>
-            <x-table.td>{{$appointment->concern}}</x-table.td>
             <x-table.td>{{$appointment->status}}</x-table.td>
             <x-table.td>
                 <div class="flex items-center gap-3">

@@ -14,6 +14,7 @@ class Appointment extends Model
         'patient_id',
         'dentist_id',
         'schedule_id',
+        'appointment_number',
         'concern',
         'remarks',
         'status'
@@ -33,5 +34,4 @@ class Appointment extends Model
     {
         return $this->belongsTo(Schedule::class);
     }
-
 }
