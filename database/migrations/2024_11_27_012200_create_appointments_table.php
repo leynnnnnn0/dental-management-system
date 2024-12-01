@@ -21,6 +21,8 @@ return new class extends Migration
             $table->string('concern');
             $table->text('remarks')->nullable();
             $table->enum('status', [
+                'cancelled',
+                'declined',
                 'pending',
                 'approved',
                 'completed'

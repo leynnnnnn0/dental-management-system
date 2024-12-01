@@ -1,6 +1,6 @@
 <div class="space-y-5">
     <x-index-header heading="Appointments" buttonName="Create New Appointment" location="/appointments/create" />
-    <x-search model="keyword"/>
+    <x-search model="keyword" />
     <x-table.table>
         <x-table.tr>
             <x-table.th>Id</x-table.th>
@@ -36,6 +36,8 @@
                         <i class="bi bi-pen text-blue-500 text-lg"></i>
                     </a>
                     <x-modal.delete-modal message="Are you sure you want to delete this appointment?" wire:click="delete({{$appointment->id}})" />
+                    <span class="cursor-pointer hover:underline text-xs text-green-500">Approve</span>
+                    <span class="cursor-pointer hover:underline text-xs text-red-500">Decline</span>
                 </div>
             </x-table.td>
         </tr>
