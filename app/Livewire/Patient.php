@@ -9,6 +9,7 @@ use Livewire\Component;
 class Patient extends Component
 {
     use HasDeleteAction;
+    public $keyword;
 
     public function getRouteName(): string
     {
@@ -26,7 +27,12 @@ class Patient extends Component
     }
     public function render()
     {
-        $patients = ModelsPatient::paginate(10);
+        $query = ModelsPatient::query();
+
+        if ($this->keyword)
+            $query->whereAny(['first_name', 'last_name'], 'like', "%{$this->keyword}%");
+
+        $patients = $query->paginate(10);
         return view('livewire.patient', [
             'patients' => $patients
         ]);

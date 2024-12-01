@@ -11,9 +11,13 @@ class User extends Component
 {
     use WithPagination;
     public UserForm $form;
+    public $keyword;
     public function render()
     {
-        $users = ModelsUser::paginate(10);
+        $query = ModelsUser::query();
+        if ($this->keyword)
+            $query->whereAny(['name'], 'like', "%{$this->keyword}%");
+        $users = $query->paginate(10);
         return view('livewire.user', [
             'users' => $users
         ]);
