@@ -35,7 +35,8 @@ class Edit extends Component
 
         $this->dentists = Dentist::select(['first_name', 'last_name', 'id'])->get()->pluck('full_name', 'id');
 
-        $this->schedules = Schedule::select('id', 'timeslot')->get()->pluck('timeslot', 'id');
+        $this->schedules = Schedule::select(['id', 'from', 'to'])->get()->pluck('timeslot', 'id');
+
         $this->form->setAppointmentForm(Appointment::findOrFail($id));
     }
     public function render()

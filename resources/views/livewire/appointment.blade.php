@@ -40,6 +40,7 @@
         </tr>
         @endforeach
     </x-table.table>
+    <x-form.no-data :data="$appointments" />
     <div>
         {{ $appointments->links()}}
     </div>

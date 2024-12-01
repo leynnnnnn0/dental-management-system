@@ -35,6 +35,7 @@
         </tr>
         @endforeach
     </x-table.table>
+    <x-form.no-data :data="$dentists" />
     <div>
         {{ $dentists->links()}}
     </div>

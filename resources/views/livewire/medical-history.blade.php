@@ -36,6 +36,7 @@
         </tr>
         @endforeach
     </x-table.table>
+    <x-form.no-data :data="$medicalHistories" />
     <div>
         {{ $medicalHistories->links()}}
     </div>

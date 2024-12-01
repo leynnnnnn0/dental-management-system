@@ -27,6 +27,7 @@
         </tr>
         @endforeach
     </x-table.table>
+    <x-form.no-data :data="$schedules" />
     <div>
         {{ $schedules->links()}}
     </div>
