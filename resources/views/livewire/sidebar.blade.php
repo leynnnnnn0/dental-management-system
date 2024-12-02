@@ -36,10 +36,5 @@
                 <i class="bi bi-people me-2"></i> Medical Histories
             </a>
         </li>
-        <li class="nav-item">
-            <a href="/settings" class="nav-link text-white font-bold {{ request()->is('settings') ? 'active' : '' }}">
-                <i class="bi bi-gear me-2"></i> Settings
-            </a>
-        </li>
     </ul>
 </div>
