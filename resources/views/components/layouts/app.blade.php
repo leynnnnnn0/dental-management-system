@@ -17,7 +17,7 @@
     @vite(['resources/css/app.css', 'resources/js/app.js'])
 </head>
 
-<body class="antialiased font-sans bg-red-500 flex flex-col min-h-screen">
+<body class="antialiased font-sans flex-col min-h-screen">
     @if(session()->has('success'))
     <div class="alert alert-success alert-dismissible fade show absolute self-end m-3 right-0" role="alert">
         <strong>{{ session('success') }}</strong>

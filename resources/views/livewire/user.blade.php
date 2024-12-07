@@ -1,7 +1,7 @@
 <div class="space-y-5">
-    <x-index-header heading="Users" buttonName="Create New User" location="/users/create" />
+    <x-index-header heading="Users" buttonName="Create New User" location="/admin/users/create" />
     <x-table.table>
-        <input class="rounded-lg w-[300px]" type="text" placeholder="Search..." wire:model.live="keyword"/>
+        <input class="rounded-lg w-[300px]" type="text" placeholder="Search..." wire:model.live="keyword" />
         <x-table.tr>
             <x-table.th>Id</x-table.th>
             <x-table.th>Name</x-table.th>

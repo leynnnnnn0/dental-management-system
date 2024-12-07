@@ -17,16 +17,12 @@
     @vite(['resources/css/app.css', 'resources/js/app.js'])
 </head>
 
-<body class="antialiased font-sans min-h-screen">
-    <section class="min-h-screen w-full flex items-center justify-center">
-        <div class="flex flex-col gap-3 items-center justify-center">
-            <h1 class="font-bold text-5xl text-blue-500">BOOK AN APPOINTMENT NOW</h1>
-            <a href="/admin/dashboard" class="px-3 py-1 text-xl rounded-lg shadow-lg font-bold text-blue-500">Click Here To Start</a>
-        </div>
+<body class="antialiased font-san flex flex-col min-h-screen">
 
-    </section>
+    
 
     @livewireScripts
-</body>mn  
+    @livewireChartsScripts
+</body>
 
 </html>
