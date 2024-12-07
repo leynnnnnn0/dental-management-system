@@ -8,6 +8,7 @@ use App\Models\Schedule;
 use App\Models\User;
 // use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 use Illuminate\Database\Seeder;
+use Illuminate\Support\Facades\Hash;
 
 class DatabaseSeeder extends Seeder
 {
@@ -28,7 +29,8 @@ class DatabaseSeeder extends Seeder
             'first_name' => 'Jashreil',
             'last_name' => 'Almoguera',
             'contact_number' => '09844330323',
-            'email' => 'jashreil@gmail.com'
+            'email' => 'jashreil@gmail.com',
+            'password' => Hash::make('password')
         ]);
 
         Dentist::factory()->create([
@@ -38,8 +40,7 @@ class DatabaseSeeder extends Seeder
             'email' => 'nathaniel@gmail.com',
             'specialization' => 'teeth',
             'license_number' => '4324234234234',
-            'password' => 'password' 
+            'password' => Hash::make('password')
         ]);
-
     }
 }

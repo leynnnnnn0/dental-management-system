@@ -17,6 +17,7 @@ class Patient extends Authenticatable
         'last_name',
         'contact_number',
         'email',
+        'password'
     ];
 
     public function getFullNameAttribute()

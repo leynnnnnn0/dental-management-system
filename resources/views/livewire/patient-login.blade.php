@@ -19,6 +19,7 @@
             required autocomplete="current-password" />
 
         <x-input-error :messages="$errors->get('form.password')" class="mt-2" />
+
     </div>
 
     <!-- Remember Me -->
@@ -34,7 +35,7 @@
             {{ __('create an account') }}
         </a>
 
-        <x-primary-button class="ms-3">
+        <x-primary-button class="ms-3" wire:click="login">
             {{ __('Log in') }}
         </x-primary-button>
     </div>
