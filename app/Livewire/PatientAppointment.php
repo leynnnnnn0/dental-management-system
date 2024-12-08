@@ -10,8 +10,24 @@ use Livewire\WithPagination;
 
 class PatientAppointment extends Component
 {
-    use WithPagination;
+    use WithPagination, HasDeleteAction;
     public $keyword;
+
+    public function getRouteName(): string
+    {
+        return 'patient-appointments.index';
+    }
+
+    public function getModel()
+    {
+        return Appointment::class;
+    }
+
+    public function getSuccessMessage(): string
+    {
+        return 'Appointment Deleted Successfully';
+    }
+
     #[Layout('layouts.patient')]
     public function render()
     {
