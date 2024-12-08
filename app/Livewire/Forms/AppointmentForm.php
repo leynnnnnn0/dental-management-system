@@ -55,6 +55,7 @@ class AppointmentForm extends Form
     public function setAppointmentForm(Appointment $appointment)
     {
         $this->appointment_id = $appointment->id;
+        $this->appointment_number = $appointment->appointment_number;
         $this->patient_id = $appointment->patient_id;
         $this->dentist_id = $appointment->dentist_id;
         $this->schedule_id = $appointment->schedule_id;

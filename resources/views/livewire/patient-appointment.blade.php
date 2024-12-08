@@ -32,7 +32,7 @@
                             <x-infolist label="Status" :value="$appointment->status" />
                         </section>
                     </x-modal.infolist-modal>
-                    <a href="/appointments/edit/{{ $appointment->id }}">
+                    <a href="/patient/appointments/edit/{{ $appointment->id }}">
                         <i class="bi bi-pen text-blue-500 text-lg"></i>
                     </a>
                     <x-modal.delete-modal message="Are you sure you want to delete this appointment?" wire:click="delete({{$appointment->id}})" />

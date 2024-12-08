@@ -14,6 +14,7 @@ use App\Livewire\Appointment\Create as CreateAppointment;
 use App\Livewire\MedicalHistory\Create as CreateMedicalHistory;
 
 use App\Livewire\PatientPage\Create as PatientCreateAppointment;
+use App\Livewire\PatientPage\Edit as PatientEditAppointment;
 
 use App\Livewire\User\Edit as EditUser;
 use App\Livewire\Patient\Edit as EditPatient;
@@ -79,6 +80,7 @@ Route::prefix('patient')->group(function () {
     Route::name('patient-appointments.')->prefix('appointments')->group(function () {
         Route::get('/', PatientAppointment::class)->name('index');
         Route::get('/create', PatientCreateAppointment::class)->name('create');
+        Route::get('/edit/{id}', PatientEditAppointment::class)->name('edit');
     });
 });
 
