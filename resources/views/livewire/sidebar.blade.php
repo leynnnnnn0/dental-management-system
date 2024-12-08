@@ -1,6 +1,6 @@
-<div class="w-64 bg-primary">
+<div class="w-64 bg-primary flex flex-col">
     <!-- Sidebar Menu -->
-    <ul class="nav flex-column p-3">
+    <ul class="flex-1 nav flex-column p-3">
         <li class="nav-item">
             <a href="/admin/dashboard" class="nav-link text-white font-bold {{ request()->is('dashboard') ? 'active' : '' }}">
                 <i class="bi bi-house-door me-2"></i> Dashboard
@@ -37,4 +37,9 @@
             </a>
         </li>
     </ul>
+
+    <div class="flex items-center gap-2 pl-5">
+        <i class="bi bi-box-arrow-left text-white font-bold"></i>
+        <button wire:click="logout" class="text-white font-bold text-start">Logout</button>
+    </div>
 </div>

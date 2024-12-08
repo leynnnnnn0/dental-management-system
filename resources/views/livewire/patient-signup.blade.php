@@ -26,6 +26,11 @@
             name="form.email"
             model="form.email"
             type="email" />
+
+        <x-form.input label="Password"
+            name="form.password"
+            model="form.password"
+            type="password" />
     </section>
 
     <div class="flex items-center justify-end mt-4">

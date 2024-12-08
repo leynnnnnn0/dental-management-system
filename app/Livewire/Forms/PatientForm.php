@@ -3,6 +3,7 @@
 namespace App\Livewire\Forms;
 
 use App\Models\Patient;
+use Illuminate\Support\Facades\Hash;
 use Illuminate\Validation\Rule;
 use Livewire\Attributes\Validate;
 use Livewire\Form;
@@ -15,6 +16,7 @@ class PatientForm extends Form
     public $last_name;
     public $contact_number;
     public $email;
+    public $password;
 
     public function rules()
     {
@@ -23,7 +25,8 @@ class PatientForm extends Form
             'last_name' => ['required'],
             'middle_name' => ['sometimes'],
             'email' => ['required', 'email', 'max:255',  Rule::unique('patients')->ignore($this->patient_id)],
-            'contact_number' => ['required']
+            'contact_number' => ['required'],
+            'password' => ['required', 'min:8']
         ];
     }
 
@@ -48,6 +51,9 @@ class PatientForm extends Form
     public function store()
     {
         $this->validate();
+        if ($this->password) {
+            $this->password = Hash::make($this->password);
+        }
         return Patient::create($this->all());
     }
 }
