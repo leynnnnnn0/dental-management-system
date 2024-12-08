@@ -25,6 +25,7 @@ class PatientLogin extends Component
             'password' => $this->form->password
         ])) {
             session()->flash('success', 'Login successful!');
+            return redirect()->route('patient-dashboard');
         }
         $this->form->addError('email', 'The provided credentials do not match our records.');
     }

@@ -13,6 +13,8 @@ use App\Livewire\Schedule\Create as CreateSchedule;
 use App\Livewire\Appointment\Create as CreateAppointment;
 use App\Livewire\MedicalHistory\Create as CreateMedicalHistory;
 
+use App\Livewire\PatientPage\Create as PatientCreateAppointment;
+
 use App\Livewire\User\Edit as EditUser;
 use App\Livewire\Patient\Edit as EditPatient;
 use App\Livewire\Dentist\Edit as EditDentist;
@@ -20,6 +22,8 @@ use App\Livewire\Appointment\Edit as EditAppointment;
 use App\Livewire\MedicalHistory\Edit as EditMedicalHistory;
 
 use App\Livewire\MedicalHistory;
+use App\Livewire\PatientAppointment;
+use App\Livewire\PatientDashboard;
 use App\Livewire\PatientLogin;
 use App\Livewire\Schedule;
 use App\Livewire\Schedule\Edit as EditSchedule;
@@ -69,7 +73,14 @@ Route::middleware('auth')->prefix('admin')->group(function () {
     });
 });
 
-Route::get('/login', PatientLogin::class)->name('index');
+Route::prefix('patient')->group(function () {
+    Route::get('/login', PatientLogin::class)->name('index');
+    Route::get('/dashboard', PatientDashboard::class)->name('patient-dashboard');
+    Route::name('patient-appointments.')->prefix('appointments')->group(function () {
+        Route::get('/', PatientAppointment::class)->name('index');
+        Route::get('/create', PatientCreateAppointment::class)->name('create');
+    });
+});
 
 Route::view('profile', 'profile')
     ->middleware(['auth'])
