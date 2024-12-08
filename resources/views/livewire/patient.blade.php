@@ -1,5 +1,5 @@
 <div class="space-y-5">
-    <x-index-header heading="Patients" buttonName="Create New Patient" location="/patients/create" />
+    <x-index-header heading="Patients" buttonName="Create New Patient" location="/admin/patients/create" />
     <x-search model="keyword" />
     <x-table.table>
         <x-table.tr>
@@ -25,7 +25,7 @@
                             <x-infolist label="Email" :value="$patient->email" />
                         </section>
                     </x-modal.infolist-modal>
-                    <a href="/patients/edit/{{ $patient->id }}">
+                    <a href="/admin/patients/edit/{{ $patient->id }}">
                         <i class="bi bi-pen text-blue-500 text-lg"></i>
                     </a>
                     <x-modal.delete-modal message="Are you sure you want to delete this user?" wire:click="delete({{$patient->id}})" />

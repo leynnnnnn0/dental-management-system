@@ -1,5 +1,5 @@
 <div class="space-y-5">
-    <x-index-header heading="Medical Histories" buttonName="Create New Medical History" location="/medical-histories/create" />
+    <x-index-header heading="Medical Histories" buttonName="Create New Medical History" location="/admin/medical-histories/create" />
     <x-table.table>
         <x-table.tr>
             <x-table.th>Id</x-table.th>
@@ -27,7 +27,7 @@
                             <x-infolist label="Remarks" :value="$medicalHistory->remarks" />
                         </section>
                     </x-modal.infolist-modal>
-                    <a href="/medical-histories/edit/{{ $medicalHistory->id }}">
+                    <a href="/admin/medical-histories/edit/{{ $medicalHistory->id }}">
                         <i class="bi bi-pen text-blue-500 text-lg"></i>
                     </a>
                     <x-modal.delete-modal message="Are you sure you want to delete this medical history?" wire:click="delete({{$medicalHistory->id}})" />

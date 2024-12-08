@@ -1,5 +1,5 @@
 <div class="space-y-5">
-    <x-index-header heading="Schedules" buttonName="Create New Schedule" location="/schedules/create" />
+    <x-index-header heading="Schedules" buttonName="Create New Schedule" location="/admin/schedules/create" />
     <x-table.table>
         <x-table.tr>
             <x-table.th>Id</x-table.th>
@@ -18,7 +18,7 @@
                             <x-infolist label="Timeslot" :value="$schedule->timeslot" />
                         </section>
                     </x-modal.infolist-modal>
-                    <a href="/schedules/edit/{{ $schedule->id }}">
+                    <a href="/admin/schedules/edit/{{ $schedule->id }}">
                         <i class="bi bi-pen text-blue-500 text-lg"></i>
                     </a>
                     <x-modal.delete-modal message="Are you sure you want to delete this schedule?" wire:click="delete({{$schedule->id}})" />

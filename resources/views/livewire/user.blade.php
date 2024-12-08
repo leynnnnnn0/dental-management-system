@@ -22,7 +22,7 @@
                             <x-infolist label="Email" :value="$user->email" />
                         </section>
                     </x-modal.infolist-modal>
-                    <a href="/users/edit/{{ $user->id }}">
+                    <a href="/admin/users/edit/{{ $user->id }}">
                         <i class="bi bi-pen text-blue-500 text-lg"></i>
                     </a>
                     <x-modal.delete-modal message="Are you sure you want to delete this user?" wire:click="delete({{$user->id}})" />
