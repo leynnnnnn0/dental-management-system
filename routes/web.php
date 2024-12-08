@@ -26,6 +26,7 @@ use App\Livewire\MedicalHistory;
 use App\Livewire\PatientAppointment;
 use App\Livewire\PatientDashboard;
 use App\Livewire\PatientLogin;
+use App\Livewire\PatientMedicalHistory;
 use App\Livewire\Schedule;
 use App\Livewire\Schedule\Edit as EditSchedule;
 use Illuminate\Support\Facades\Route;
@@ -77,10 +78,15 @@ Route::middleware('auth')->prefix('admin')->group(function () {
 Route::prefix('patient')->group(function () {
     Route::get('/login', PatientLogin::class)->name('index');
     Route::get('/dashboard', PatientDashboard::class)->name('patient-dashboard');
+
     Route::name('patient-appointments.')->prefix('appointments')->group(function () {
         Route::get('/', PatientAppointment::class)->name('index');
         Route::get('/create', PatientCreateAppointment::class)->name('create');
         Route::get('/edit/{id}', PatientEditAppointment::class)->name('edit');
+    });
+
+    Route::name('patient-medical-histories.')->prefix('medical-histories')->group(function () {
+        Route::get('/', PatientMedicalHistory::class)->name('index');
     });
 });
 
