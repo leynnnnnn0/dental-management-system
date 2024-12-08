@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\PDFController;
 use App\Livewire\Appointment;
 use App\Livewire\Dashboard;
 use App\Livewire\Patient;
@@ -89,6 +90,8 @@ Route::middleware(['web', 'auth:patient'])->prefix('patient')->group(function ()
         Route::get('/', PatientMedicalHistory::class)->name('index');
     });
 });
+
+Route::get('/medical-report/{id}', [PDFController::class, 'medicalReport']);
 
 Route::view('profile', 'profile')
     ->middleware(['auth'])

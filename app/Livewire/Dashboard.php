@@ -81,7 +81,7 @@ class Dashboard extends Component
 
         foreach ($dentistWorkload as $index => $data) {
             $chart->addSlice(
-                $data->name ?? "Dentist " . ($index + 1),
+                $data->dentist->full_name ?? "Dentist " . ($index + 1),
                 $data->count,
                 $colors[$index % count($colors)]
             );
