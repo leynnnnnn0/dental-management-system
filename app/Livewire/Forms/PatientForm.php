@@ -22,7 +22,7 @@ class PatientForm extends Form
             'first_name' => ['required'],
             'last_name' => ['required'],
             'middle_name' => ['sometimes'],
-            'email' => ['required', 'email', 'max:255',  Rule::unique('users')->ignore($this->patient_id)],
+            'email' => ['required', 'email', 'max:255',  Rule::unique('patients')->ignore($this->patient_id)],
             'contact_number' => ['required']
         ];
     }

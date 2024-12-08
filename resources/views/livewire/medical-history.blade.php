@@ -31,6 +31,9 @@
                         <i class="bi bi-pen text-blue-500 text-lg"></i>
                     </a>
                     <x-modal.delete-modal message="Are you sure you want to delete this medical history?" wire:click="delete({{$medicalHistory->id}})" />
+                    <a target="_blank" class="hover:underline text-xs text-yellow-700" href="/medical-report/{{ $medicalHistory->id}}">
+                        Download
+                    </a>
                 </div>
             </x-table.td>
         </tr>
