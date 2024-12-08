@@ -74,9 +74,9 @@ Route::middleware('auth')->prefix('admin')->group(function () {
         Route::get('/edit/{id}', EditMedicalHistory::class)->name('edit');
     });
 });
+Route::get('/login', PatientLogin::class);
+Route::middleware(['web', 'auth:patient'])->prefix('patient')->group(function () {
 
-Route::prefix('patient')->group(function () {
-    Route::get('/login', PatientLogin::class)->name('index');
     Route::get('/dashboard', PatientDashboard::class)->name('patient-dashboard');
 
     Route::name('patient-appointments.')->prefix('appointments')->group(function () {

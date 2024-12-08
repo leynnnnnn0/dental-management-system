@@ -7,32 +7,32 @@
             </a>
         </li>
         <li class="nav-item">
-            <a href="/admin/users" class="nav-link text-white font-bold {{ request()->is('users*') ? 'active' : '' }}">
+            <a href="/admin/users" class="nav-link text-white font-bold {{ request()->is('*users*') ? 'active' : '' }}">
                 <i class="bi bi-people me-2"></i> Users
             </a>
         </li>
         <li class="nav-item">
-            <a href="/admin/patients" class="nav-link text-white font-bold {{ request()->is('patients*') ? 'active' : '' }}">
+            <a href="/admin/patients" class="nav-link text-white font-bold {{ request()->is('*patients*') ? 'active' : '' }}">
                 <i class="bi bi-people me-2"></i> Patients
             </a>
         </li>
         <li class="nav-item">
-            <a href="/admin/dentists" class="nav-link text-white font-bold {{ request()->is('dentists*') ? 'active' : '' }}">
+            <a href="/admin/dentists" class="nav-link text-white font-bold {{ request()->is('*dentists*') ? 'active' : '' }}">
                 <i class="bi bi-people me-2"></i> Dentists
             </a>
         </li>
         <li class="nav-item">
-            <a href="/admin/schedules" class="nav-link text-white font-bold {{ request()->is('schedules*') ? 'active' : '' }}">
+            <a href="/admin/schedules" class="nav-link text-white font-bold {{ request()->is('*schedules*') ? 'active' : '' }}">
                 <i class="bi bi-people me-2"></i> Schedules
             </a>
         </li>
         <li class="nav-item">
-            <a href="/admin/appointments" class="nav-link text-white font-bold {{ request()->is('appointments*') ? 'active' : '' }}">
+            <a href="/admin/appointments" class="nav-link text-white font-bold {{ request()->is('*appointments*') ? 'active' : '' }}">
                 <i class="bi bi-people me-2"></i> Appointments
             </a>
         </li>
         <li class="nav-item">
-            <a href="/admin/medical-histories" class="nav-link text-white font-bold {{ request()->is('medical-histories*') ? 'active' : '' }}">
+            <a href="/admin/medical-histories" class="nav-link text-white font-bold {{ request()->is('*medical-histories*') ? 'active' : '' }}">
                 <i class="bi bi-people me-2"></i> Medical Histories
             </a>
         </li>

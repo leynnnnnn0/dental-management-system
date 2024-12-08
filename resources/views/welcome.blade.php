@@ -21,12 +21,12 @@
     <section class="min-h-screen w-full flex items-center justify-center">
         <div class="flex flex-col gap-3 items-center justify-center">
             <h1 class="font-bold text-5xl text-blue-500">BOOK AN APPOINTMENT NOW</h1>
-            <a href="/admin/dashboard" class="px-3 py-1 text-xl rounded-lg shadow-lg font-bold text-blue-500">Click Here To Start</a>
+            <a href="/login" class="px-3 py-1 text-xl rounded-lg shadow-lg font-bold text-blue-500">Click Here To Start</a>
         </div>
 
     </section>
 
     @livewireScripts
-</body>mn  
+</body>mn
 
 </html>

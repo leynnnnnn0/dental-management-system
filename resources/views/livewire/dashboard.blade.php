@@ -6,8 +6,17 @@
         <x-stats-box icon="bi-person-check" title="Dentists" value="{{$dentists}}" />
     </section>
     <section class="flex-1 grid grid-cols-2">
-        <livewire:livewire-column-chart
-            :column-chart-model="$columnChartModel" />
-        <livewire:livewire-pie-chart :pie-chart-model="$pieChartModel" />
+        <div>
+            <h2>Appointment Status</h2>
+            <livewire:livewire-pie-chart
+                :pie-chart-model="$appointmentStatusChart" />
+        </div>
+
+
+        <div>
+            <h2>Dentist Workload</h2>
+            <livewire:livewire-pie-chart
+                :pie-chart-model="$dentistWorkloadChart" />
+        </div>
     </section>
 </div>
