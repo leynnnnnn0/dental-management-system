@@ -21,6 +21,15 @@ class Appointment extends Component
         return $this->redirect(route('appointments.index'), true);
     }
 
+    public function complete($id)
+    {
+        ModelsAppointment::findOrFail($id)->update([
+            'status' => 'completed'
+        ]);
+        session()->flash('success', 'Appointment Complete!');
+        return $this->redirect(route('appointments.index'), true);
+    }
+
     public function decline($id)
     {
         ModelsAppointment::findOrFail($id)->update([

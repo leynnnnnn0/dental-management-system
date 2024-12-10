@@ -36,7 +36,6 @@
                         <i class="bi bi-pen text-blue-500 text-lg"></i>
                     </a>
                     <x-modal.delete-modal message="Are you sure you want to delete this appointment?" wire:click="delete({{$appointment->id}})" />
-
                     @if($appointment->status === 'pending')
                     <div>
                         <button class="cursor-pointer hover:underline text-xs text-green-500" type="button" data-bs-toggle="modal" data-bs-target="#approve">
@@ -84,6 +83,32 @@
                         </div>
                     </div>
                     @endif
+
+                    @if ($appointment->status === 'approved')
+                    <button class="cursor-pointer hover:underline text-xs text-green-500" type="button" data-bs-toggle="modal" data-bs-target="#completed">
+                        Completed
+                    </button>
+
+                    <div class="modal fade" id="completed" tabindex="-1" aria-labelledby="approve-modal" aria-hidden="true">
+                        <div class="modal-dialog">
+                            <div class="modal-content">
+                                <div class="modal-header">
+                                    <h5 class="modal-title" id="exampleModalLabel">Confirmation</h5>
+                                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                                </div>
+                                <div class="modal-body">
+                                    Are you sure you want to mark this appointment as complete?
+                                </div>
+                                <div class="modal-footer">
+                                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                                    <button type="button" class="btn btn-success" data-bs-dismiss="modal" wire:click="complete('{{$appointment->id}}')">Confirm</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    @endif
+
+
                 </div>
             </x-table.td>
         </tr>
