@@ -13,6 +13,11 @@
         model="form.schedule_id"
         :options="$schedules" />
 
+    <x-form.input label="Date"
+        name="form.date"
+        model="form.date"
+        type="date" />
+
 
     <x-form.input label="Concern"
         name="form.concern"

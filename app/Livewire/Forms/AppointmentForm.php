@@ -13,6 +13,7 @@ class AppointmentForm extends Form
     public $patient_id;
     public $dentist_id;
     public $schedule_id;
+    public $date;
     public $concern;
     public $remarks;
     public $status;
@@ -24,6 +25,7 @@ class AppointmentForm extends Form
             'patient_id' => ['required'],
             'dentist_id' => ['required'],
             'schedule_id' => ['required'],
+            'date' => ['required'],
             'concern' => ['required'],
             'remarks' => ['sometimes'],
         ];
@@ -59,6 +61,7 @@ class AppointmentForm extends Form
         $this->patient_id = $appointment->patient_id;
         $this->dentist_id = $appointment->dentist_id;
         $this->schedule_id = $appointment->schedule_id;
+        $this->date = $appointment->date;
         $this->concern = $appointment->concern;
         $this->remarks = $appointment->remarks;
         $this->status = $appointment->status;

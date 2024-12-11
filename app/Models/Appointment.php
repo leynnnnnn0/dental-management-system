@@ -14,10 +14,15 @@ class Appointment extends Model
         'patient_id',
         'dentist_id',
         'schedule_id',
+        'date',
         'appointment_number',
         'concern',
         'remarks',
         'status'
+    ];
+
+    public $casts = [
+        'date' => 'date: F d, Y'
     ];
 
     public function patient()

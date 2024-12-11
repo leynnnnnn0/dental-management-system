@@ -17,6 +17,7 @@ return new class extends Migration
             $table->foreignId('patient_id')->constrained('patients')->cascadeOnDelete();
             $table->foreignId('dentist_id')->constrained('dentists')->cascadeOnDelete();
             $table->foreignId('schedule_id')->constrained('schedules')->cascadeOnDelete();
+            $table->date('date');
             $table->string('appointment_number')->unique();
             $table->string('concern');
             $table->text('remarks')->nullable();

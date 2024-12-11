@@ -27,6 +27,7 @@
                             <x-infolist label="Dentist" :value="$appointment->dentist->full_name" />
                             <x-infolist label="Patient" :value="$appointment->patient->full_name" />
                             <x-infolist label="Schedule" :value="$appointment->schedule->timeslot" />
+                            <x-infolist label="Date" :value="$appointment->date" />
                             <x-infolist label="Concern" :value="$appointment->concern" />
                             <x-infolist label="Remarks" :value="$appointment->remarks" />
                             <x-infolist label="Status" :value="$appointment->status" />
