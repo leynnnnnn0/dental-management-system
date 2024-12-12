@@ -21,6 +21,7 @@ use App\Livewire\User\Edit as EditUser;
 use App\Livewire\Patient\Edit as EditPatient;
 use App\Livewire\Dentist\Edit as EditDentist;
 use App\Livewire\Appointment\Edit as EditAppointment;
+use App\Livewire\Calendar;
 use App\Livewire\MedicalHistory\Edit as EditMedicalHistory;
 
 use App\Livewire\MedicalHistory;
@@ -76,8 +77,8 @@ Route::middleware('auth')->prefix('admin')->group(function () {
         Route::get('/edit/{id}', EditMedicalHistory::class)->name('edit');
     });
 });
-Route::get('/login', PatientLogin::class)->name('patient-login');
-Route::get('/signup', PatientSignup::class);
+Route::middleware('guest:patient')->get('/login', PatientLogin::class)->name('patient-login');
+Route::middleware('guest:patient')->get('/signup', PatientSignup::class);
 Route::middleware(['web', 'auth:patient'])->prefix('patient')->group(function () {
 
     Route::get('/dashboard', PatientDashboard::class)->name('patient-dashboard');
@@ -92,6 +93,8 @@ Route::middleware(['web', 'auth:patient'])->prefix('patient')->group(function ()
         Route::get('/', PatientMedicalHistory::class)->name('index');
     });
 });
+
+Route::get('/calendar', Calendar::class);
 
 Route::get('/medical-report/{id}', [PDFController::class, 'medicalReport']);
 

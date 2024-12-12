@@ -1,1 +1,1 @@
-<h1 class="font-bold text-2xl">My Dentist Appointment</h1>
+<img src="{{ Vite::asset('resources/images/logo.png')}}" class="size-20" alt="logo">

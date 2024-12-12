@@ -3,6 +3,7 @@
 namespace App\Livewire;
 
 use App\Livewire\Forms\LoginForm;
+use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Livewire\Attributes\Layout;
 use Livewire\Component;
@@ -28,5 +29,10 @@ class PatientLogin extends Component
             return redirect()->route('patient-dashboard');
         }
         $this->form->addError('email', 'The provided credentials do not match our records.');
+    }
+
+    protected function authenticated(Request $request, $user)
+    {
+        return redirect()->route('patient-dashboard');
     }
 }
