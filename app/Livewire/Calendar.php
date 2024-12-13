@@ -6,11 +6,7 @@ use Livewire\Component;
 
 class Calendar extends Component
 {
-    public function getAppointments()
-    {
-        return [];
-    }
-
+    public $title = 'test';
     public function render()
     {
         return view('livewire.calendar');
