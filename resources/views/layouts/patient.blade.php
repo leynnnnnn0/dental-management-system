@@ -25,6 +25,7 @@
     </div>
     @endif
     <nav class="bg-primary px-4 text-white font-bold h-16 flex items-center">
+        <img src="{{ Vite::asset('resources/images/logo.png')}}" class="size-20" alt="logo">
         My Dental System
     </nav>
 

@@ -13,6 +13,7 @@
         "laravel/tinker": "^2.9",
         "livewire/livewire": "*",
         "livewire/volt": "^1.0",
+        "omnia-digital/livewire-calendar": "^3.1",
         "twbs/bootstrap": "5.0.2"
     },
     "require-dev": {

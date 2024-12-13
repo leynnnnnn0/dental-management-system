@@ -13,27 +13,27 @@
         </li>
         <li class="nav-item">
             <a href="/admin/patients" class="nav-link text-white font-bold {{ request()->is('*patients*') ? 'active' : '' }}">
-                <i class="bi bi-people me-2"></i> Patients
+                <i class="bi bi-person-square"></i>Patients
             </a>
         </li>
         <li class="nav-item">
             <a href="/admin/dentists" class="nav-link text-white font-bold {{ request()->is('*dentists*') ? 'active' : '' }}">
-                <i class="bi bi-people me-2"></i> Dentists
+                <i class="bi bi-person-vcard"></i> Dentists
             </a>
         </li>
         <li class="nav-item">
             <a href="/admin/schedules" class="nav-link text-white font-bold {{ request()->is('*schedules*') ? 'active' : '' }}">
-                <i class="bi bi-people me-2"></i> Schedules
+                <i class="bi bi-calendar-date"></i> Schedules
             </a>
         </li>
         <li class="nav-item">
             <a href="/admin/appointments" class="nav-link text-white font-bold {{ request()->is('*appointments*') ? 'active' : '' }}">
-                <i class="bi bi-people me-2"></i> Appointments
+                <i class="bi bi-file-medical"></i> Appointments
             </a>
         </li>
         <li class="nav-item">
             <a href="/admin/medical-histories" class="nav-link text-white font-bold {{ request()->is('*medical-histories*') ? 'active' : '' }}">
-                <i class="bi bi-people me-2"></i> Medical Histories
+                <i class="bi bi-clipboard2-pulse"></i> Medical Histories
             </a>
         </li>
     </ul>
