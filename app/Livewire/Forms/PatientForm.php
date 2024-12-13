@@ -25,7 +25,7 @@ class PatientForm extends Form
             'last_name' => ['required'],
             'middle_name' => ['sometimes'],
             'email' => ['required', 'email', 'max:255',  Rule::unique('patients')->ignore($this->patient_id)],
-            'contact_number' => ['required'],
+            'contact_number' => ['required', 'regex:/^09\d{9}$/'],
             'password' => ['required', 'min:8']
         ];
     }

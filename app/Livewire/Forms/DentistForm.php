@@ -27,7 +27,7 @@ class DentistForm extends Form
             'specialization' => ['required'],
             'license_number' => ['required'],
             'email' => ['required', 'email', 'max:255',  Rule::unique('users')->ignore($this->dentist_id)],
-            'contact_number' => ['required'],
+            'contact_number' => ['required', 'regex:/^09\d{9}$/'],
             'password' => ['required']
         ];
     }

@@ -18,7 +18,7 @@ class Calendar extends Component
     public function loadApprovedAppointments()
     {
         $this->appointments = Appointment::where('patient_id', auth()->id())
-            ->where('status', 'pending')
+            ->where('status', 'approved')
             ->get()
             ->map(function ($appointment) {
                 return [
