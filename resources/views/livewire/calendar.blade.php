@@ -7,13 +7,16 @@
 <script>
     document.addEventListener('livewire:initialized', () => {
         const calendarEl = document.getElementById('fullcalendar');
+        const appointments = @json($appointments);
+
         const calendar = new FullCalendar.Calendar(calendarEl, {
             initialView: 'dayGridMonth',
             headerToolbar: {
                 left: 'prev,next today',
                 center: 'title',
                 right: 'dayGridMonth,timeGridWeek,timeGridDay'
-            }
+            },
+            events: appointments
         });
 
         calendar.render();
