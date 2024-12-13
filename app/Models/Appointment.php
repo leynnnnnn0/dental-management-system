@@ -21,9 +21,11 @@ class Appointment extends Model
         'status'
     ];
 
-    public $casts = [
-        'date' => 'date: F d, Y'
-    ];
+    public function getDateAttribute($value)
+    {
+        return \Carbon\Carbon::parse($value)->format('F d, Y');
+    }
+
 
     public function patient()
     {
