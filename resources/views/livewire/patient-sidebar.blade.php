@@ -2,7 +2,7 @@
     <!-- Sidebar Menu -->
     <ul class="nav flex-column p-3 flex-1">
         <li class="nav-item">
-            <a href="/patient/dashboard" class="nav-link text-white font-bold {{ request()->is('dashboard') ? 'active' : '' }}">
+            <a href="/patient/dashboard" class="nav-link text-white font-bold {{ request()->is('*dashboard*') ? 'active' : '' }}">
                 <i class="bi bi-house"></i> Dashboard
             </a>
         </li>

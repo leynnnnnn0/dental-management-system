@@ -25,7 +25,7 @@ class AppointmentForm extends Form
             'patient_id' => ['required'],
             'dentist_id' => ['required'],
             'schedule_id' => ['required'],
-            'date' => ['required'],
+            'date' => ['required', 'after_or_equal:today'],
             'concern' => ['required'],
             'remarks' => ['sometimes'],
         ];
