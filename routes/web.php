@@ -78,7 +78,7 @@ Route::middleware('auth')->prefix('admin')->group(function () {
     });
 });
 Route::middleware('guest:patient')->get('/login', PatientLogin::class)->name('patient-login');
-Route::middleware('guest:patient')->get('/signup', PatientSignup::class);
+Route::middleware('guest:patient')->get('/signup', PatientSignup::class)->name('patient-signup');
 Route::middleware(['web', 'auth:patient'])->prefix('patient')->group(function () {
 
     Route::get('/dashboard', PatientDashboard::class)->name('patient-dashboard');
