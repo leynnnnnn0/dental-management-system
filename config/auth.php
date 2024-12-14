@@ -42,7 +42,8 @@ return [
         ],
         'patient' => [
             'driver' => 'session',
-            'provider' => 'patients'
+            'provider' => 'patients',
+            'redirect' => 'patient-dashboard',
         ]
     ],
 
