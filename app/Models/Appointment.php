@@ -20,6 +20,7 @@ class Appointment extends Model
         'remarks',
         'status'
     ];
+    
 
     public function getDateAttribute($value)
     {

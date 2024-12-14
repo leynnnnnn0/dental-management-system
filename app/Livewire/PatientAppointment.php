@@ -31,7 +31,7 @@ class PatientAppointment extends Component
     #[Layout('layouts.patient')]
     public function render()
     {
-        $query = Appointment::query();
+        $query = Appointment::query()->where('patient_id', auth('patient')->id());
         if ($this->keyword)
             $query->whereAny(['appointment_number'], 'like', "%{$this->keyword}%");
         $appointments = $query->paginate(10);

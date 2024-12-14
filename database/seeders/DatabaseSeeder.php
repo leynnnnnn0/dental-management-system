@@ -2,6 +2,7 @@
 
 namespace Database\Seeders;
 
+use App\Models\Appointment;
 use App\Models\Dentist;
 use App\Models\Patient;
 use App\Models\Schedule;
@@ -42,5 +43,11 @@ class DatabaseSeeder extends Seeder
             'license_number' => '4324234234234',
             'password' => Hash::make('password')
         ]);
+
+        User::factory(10)->create();
+        Patient::factory(10)->create();
+        Dentist::factory(10)->create();
+        Schedule::factory(5)->create();
+        Appointment::factory(20)->create();
     }
 }

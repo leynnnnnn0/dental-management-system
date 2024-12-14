@@ -13,7 +13,7 @@
         </li>
         <li class="nav-item">
             <a href="/admin/patients" class="nav-link text-white font-bold {{ request()->is('*patients*') ? 'active' : '' }}">
-                <i class="bi bi-person-square"></i>Patients
+                <i class="bi bi-person-square mr-2"></i>Patients
             </a>
         </li>
         <li class="nav-item">
