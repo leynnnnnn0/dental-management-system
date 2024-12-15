@@ -13,11 +13,12 @@ class Sidebar extends Component
         return view('livewire.sidebar');
     }
 
-    public function logout(): void
+    public function logout()
     {
         Auth::guard('web')->logout();
 
         Session::invalidate();
         Session::regenerateToken();
+        return redirect('login');
     }
 }

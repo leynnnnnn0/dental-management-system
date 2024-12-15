@@ -13,11 +13,12 @@ class PatientSidebar extends Component
         return view('livewire.patient-sidebar');
     }
 
-    public function logout(): void
+    public function logout()
     {
         Auth::guard('patient')->logout();
 
         Session::invalidate();
         Session::regenerateToken();
+        return redirect('patient-login');
     }
 }
