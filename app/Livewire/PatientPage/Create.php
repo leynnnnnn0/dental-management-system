@@ -30,7 +30,7 @@ class Create extends Component
 
     public function mount()
     {
-        $this->form->patient_id = Auth::user()->id;
+        $this->form->patient_id = Auth::guard('patient')->user()->id;
         $this->form->status = 'pending';
         $this->dentists = Dentist::select(['first_name', 'last_name', 'id'])->get()->pluck('full_name', 'id');
 

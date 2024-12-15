@@ -17,7 +17,7 @@ class User extends Component
         $query = ModelsUser::query();
         if ($this->keyword)
             $query->whereAny(['name'], 'like', "%{$this->keyword}%");
-        $users = $query->paginate(10);
+        $users = $query->latest()->paginate(10);
         return view('livewire.user', [
             'users' => $users
         ]);

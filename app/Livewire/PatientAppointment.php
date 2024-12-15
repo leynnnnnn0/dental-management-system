@@ -4,6 +4,7 @@ namespace App\Livewire;
 
 use App\Models\Appointment;
 use App\Traits\HasDeleteAction;
+use Illuminate\Support\Facades\Auth;
 use Livewire\Attributes\Layout;
 use Livewire\Component;
 use Livewire\WithPagination;
@@ -31,10 +32,11 @@ class PatientAppointment extends Component
     #[Layout('layouts.patient')]
     public function render()
     {
+    
         $query = Appointment::query()->where('patient_id', auth('patient')->id());
         if ($this->keyword)
             $query->whereAny(['appointment_number'], 'like', "%{$this->keyword}%");
-        $appointments = $query->paginate(10);
+        $appointments = $query->latest()->paginate(10);
         return view('livewire.patient-appointment', [
             'appointments' => $appointments
         ]);

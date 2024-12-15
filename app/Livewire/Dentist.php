@@ -32,7 +32,7 @@ class Dentist extends Component
         if ($this->keyword)
             $query->whereAny(['first_name', 'last_name'], 'like', "%{$this->keyword}%");
 
-        $dentists = $query->paginate(10);
+        $dentists = $query->latest()->paginate(10);
 
         return view('livewire.dentist', [
             'dentists' => $dentists

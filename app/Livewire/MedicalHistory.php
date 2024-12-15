@@ -25,7 +25,7 @@ class MedicalHistory extends Component
     }
     public function render()
     {
-        $medicalHistories = \App\Models\MedicalHistory::with(['dentist', 'patient'])->paginate(10);
+        $medicalHistories = \App\Models\MedicalHistory::with(['dentist', 'patient'])->latest()->paginate(10);
         return view('livewire.medical-history', [
             'medicalHistories' => $medicalHistories
         ]);

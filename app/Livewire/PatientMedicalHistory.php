@@ -15,7 +15,7 @@ class PatientMedicalHistory extends Component
     #[Layout('layouts.patient')]
     public function render()
     {
-        $medicalHistories = \App\Models\MedicalHistory::with(['dentist', 'patient'])->where('patient_id', Auth::user()->id)->paginate(10);
+        $medicalHistories = \App\Models\MedicalHistory::with(['dentist', 'patient'])->where('patient_id', Auth::guard('patient')->user()->id)->latest()->paginate(10);
         return view('livewire.patient-medical-history', [
             'medicalHistories' => $medicalHistories
         ]);

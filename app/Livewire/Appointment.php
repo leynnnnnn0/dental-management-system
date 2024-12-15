@@ -57,7 +57,7 @@ class Appointment extends Component
         $query = ModelsAppointment::query();
         if ($this->keyword)
             $query->whereAny(['appointment_number'], 'like', "%{$this->keyword}%");
-        $appointments = $query->paginate(10);
+        $appointments = $query->latest(10)->paginate(10);
         return view('livewire.appointment', [
             'appointments' => $appointments
         ]);
