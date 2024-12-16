@@ -22,7 +22,7 @@
             model="form.contact_number"
             type="number" />
 
-        <x-form.input label="Contact Number"
+        <x-form.input label="Email"
             name="form.email"
             model="form.email"
             type="email" />
